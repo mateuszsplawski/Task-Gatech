@@ -1,0 +1,130 @@
+{
+    "data": [
+        {
+            "address": {
+                "city": "Gorzów",
+                "street": "Zielonogórska",
+                "houseNumber": "18"
+            },
+            "_id": "5e2ff7e09b56431b7865ef2d",
+            "name": "Krzysztof Wichura",
+            "email": "criskris@zmail.com",
+            "sex": false,
+            "avatar": "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_960_720.png",
+            "age": 18,
+            "__v": 0
+        },
+        {
+            "address": {
+                "city": "Gorzów",
+                "street": "Krysiewicza",
+                "houseNumber": "23A"
+            },
+            "_id": "5e2ff81a9b56431b7865ef2e",
+            "name": "Janina Wichura",
+            "email": "janka@fmail.com",
+            "sex": true,
+            "avatar": "https://cdn4.iconfinder.com/data/icons/professional-avatar-5/48/Public_relation_avatar_women_woman_profile_character_professions_2-512.png",
+            "age": 45,
+            "__v": 0
+        },
+        {
+            "address": {
+                "city": "Poznań",
+                "street": "Krysiewicza",
+                "houseNumber": "2"
+            },
+            "_id": "5e2ff8429b56431b7865ef2f",
+            "name": "Marianna Kowalska",
+            "email": "marysiakow@gmail.com",
+            "sex": true,
+            "avatar": "https://cdn4.iconfinder.com/data/icons/professional-avatar-5/48/Public_relation_avatar_women_woman_profile_character_professions_2-512.png",
+            "age": 32,
+            "__v": 0
+        },
+        {
+            "address": {
+                "city": "Warszawa",
+                "street": "Mickiewicza",
+                "houseNumber": "67"
+            },
+            "_id": "5e2ff8869b56431b7865ef30",
+            "name": "Grzegorz Borysiak",
+            "email": "boragrzes@o2.com",
+            "sex": false,
+            "avatar": "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_960_720.png",
+            "age": 29,
+            "__v": 0
+        },
+        {
+            "address": {
+                "city": "Gdańsk",
+                "street": "Westerplatte",
+                "houseNumber": "22"
+            },
+            "_id": "5e2ff8b99b56431b7865ef31",
+            "name": "Wojtek Sołtys",
+            "email": "soltysik@zmail.com",
+            "sex": false,
+            "avatar": "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_960_720.png",
+            "age": 71,
+            "__v": 0
+        },
+        {
+            "address": {
+                "city": "Poznań",
+                "street": "Rynek",
+                "houseNumber": "21"
+            },
+            "_id": "5e2ff8e29b56431b7865ef32",
+            "name": "Sebastian Marchewka",
+            "email": "marewkamarchewa@onet.pl",
+            "sex": false,
+            "avatar": "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_960_720.png",
+            "age": 27,
+            "__v": 0
+        },
+        {
+            "address": {
+                "city": "Poznań",
+                "street": "Garbary",
+                "houseNumber": "39"
+            },
+            "_id": "5e2ff91c9b56431b7865ef33",
+            "name": "Alina Majewska",
+            "email": "majaalina@onet.pl",
+            "sex": true,
+            "avatar": "https://cdn4.iconfinder.com/data/icons/professional-avatar-5/48/Public_relation_avatar_women_woman_profile_character_professions_2-512.png",
+            "age": 47,
+            "__v": 0
+        },
+        {
+            "address": {
+                "city": "Zakopane",
+                "street": "Krupówki",
+                "houseNumber": "63A"
+            },
+            "_id": "5e2ff94e9b56431b7865ef34",
+            "name": "Justyna Kowalska",
+            "email": "kowalskajj@onet.pl",
+            "sex": true,
+            "avatar": "https://cdn4.iconfinder.com/data/icons/professional-avatar-5/48/Public_relation_avatar_women_woman_profile_character_professions_2-512.png",
+            "age": 22,
+            "__v": 0
+        },
+        {
+            "address": {
+                "city": "Poznań",
+                "street": "Poznańska",
+                "houseNumber": "32"
+            },
+            "_id": "5e2ff9909b56431b7865ef35",
+            "name": "Marian Bolesław",
+            "email": "marianix@gmail.com",
+            "sex": false,
+            "avatar": "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_960_720.png",
+            "age": 47,
+            "__v": 0
+        }
+    ]
+}
