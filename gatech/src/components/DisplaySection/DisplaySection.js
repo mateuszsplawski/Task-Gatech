@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import User from "../User/User";
 import colors from "./../../theme/colors";
@@ -14,15 +14,21 @@ const StyledSection = styled.section`
   flex-direction: column;
 `;
 
-const DisplaySection = ({ filterErr, filteredData }) => {
+const DisplaySection = ({ filterErr, filteredData, sortedData }) => {
+  const [actualData, setActualData] = useState([]);
+  useEffect(() => {
+    sortedData.length > 0
+      ? setActualData(sortedData)
+      : setActualData(filteredData);
+  }, [filteredData, sortedData]);
   return (
     <StyledSection colors={colors}>
       <ul>
         {filterErr ? (
           <h1>Nie ma takiego użytkownika.</h1>
         ) : (
-          filteredData &&
-          filteredData.map(userData => (
+          actualData &&
+          actualData.map(userData => (
             <User key={userData._id} userData={userData} />
           ))
         )}

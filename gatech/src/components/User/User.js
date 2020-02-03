@@ -97,7 +97,7 @@ const StyledLi = styled.li`
 `;
 
 const User = ({ userData }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
 
   const {
     address: { city, street, houseNumber },

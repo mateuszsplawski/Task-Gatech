@@ -21,12 +21,18 @@ const StyledWrapper = styled.main`
 `;
 
 const App = () => {
+  const [clearSort, setClearSort] = useState(false);
   const [usersData, setUsersData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [filterErr, setFilterErr] = useState(false);
-  const [sortAge, setSortAge] = useState(true);
-  const [sortEmail, setSortEmail] = useState(true);
+  const [sortAgeValue, setSortAgeValue] = useState("");
+  const [sortEmailValue, setSortEmailValue] = useState("");
+  const [sortedData, setSortedData] = useState([]);
+
+  //
+  // FETCHING USERS DATA HOOK
+  //
 
   useEffect(() => {
     const fetchData = async () =>
@@ -36,6 +42,10 @@ const App = () => {
         .catch(err => console.log(err));
     fetchData();
   }, []);
+
+  //
+  // FILTER NAME HOOK
+  //
 
   useEffect(() => {
     if (searchValue === "") {
@@ -58,59 +68,90 @@ const App = () => {
     }
   }, [searchValue, usersData, filteredData.length]);
 
-  useEffect(() => {
-    if (sortAge) {
-      filteredData.sort((a, b) => {
-        if (a.age > b.age) {
-          return 1;
-        } else if (a.age < b.age) {
-          return -1;
-        }
-      });
-    } else if (!sortAge) {
-      filteredData.sort((a, b) => {
-        if (a.age > b.age) {
-          return -1;
-        } else if (a.age < b.age) {
-          return 1;
-        }
-      });
-    } else if (sortEmail) {
-      filteredData.sort((a, b) => {
-        if (a.email > b.email) {
-          return 1;
-        } else if (a.email < b.email) {
-          return -1;
-        }
-      });
+  //
+  // SORTING DATA FUNCTION
+  //
+
+  const sortData = e => {
+    e.preventDefault();
+    setSortedData(filteredData);
+    if (!clearSort) {
+      // Sort Data by Age
+      if (sortAgeValue === "ASC") {
+        sortedData.sort((a, b) => {
+          if (a.age > b.age) {
+            return 1;
+          } else if (a.age < b.age) {
+            return -1;
+          } else return 0;
+        });
+        console.log("ROŚNIE");
+      } else if (sortAgeValue === "DESC") {
+        sortedData.sort((a, b) => {
+          if (a.age > b.age) {
+            return -1;
+          } else if (a.age < b.age) {
+            return 1;
+          } else return 0;
+        });
+        console.log("MALEJE");
+      }
+      // Sort Data by Email
+      if (sortEmailValue === "AZ") {
+        sortedData.sort((a, b) => {
+          if (a.email > b.email) {
+            return 1;
+          } else if (a.email < b.email) {
+            return -1;
+          } else return 0;
+        });
+        console.log("AZ");
+      } else if (sortEmailValue === "ZA") {
+        sortedData.sort((a, b) => {
+          if (a.email > b.email) {
+            return -1;
+          } else if (a.email < b.email) {
+            return 1;
+          } else return 0;
+        });
+        console.log("ZA");
+      }
+    } else if (clearSort) {
+      setSortedData([]);
+      setSortEmailValue("");
+      setSortAgeValue("");
+      setClearSort(false);
     }
-  }, [sortAge, filteredData, sortEmail]);
+  };
+
+  const handleSelectChange = e => {
+    if (e.target.id === "email") {
+      setSortEmailValue(e.target.value);
+    } else if (e.target.id === "age") {
+      setSortAgeValue(e.target.value);
+    }
+  };
 
   const handleInputChange = e => {
     setSearchValue(e.target.value);
   };
 
-  const handleButtonClick = e => {
-    e.preventDefault();
-    if (e.target.name === "age") {
-      // TRUE ASCENDING ORDER
-      setSortAge(!sortAge);
-    } else if (e.target.name === "email") {
-      // TRUE A-Z
-      setSortEmail(e.target.value);
-    } else return undefined;
-  };
-
   return (
     <StyledWrapper colors={colors}>
       <SearchSection
-        sortAge={sortAge}
-        sortEmail={sortEmail}
-        handleButtonClick={handleButtonClick}
-        handleInputChange={handleInputChange}
+        sortAgeValue={sortAgeValue}
+        sortEmailValue={sortEmailValue}
         searchValue={searchValue}
+        handleInputChange={handleInputChange}
+        handleSelectChange={handleSelectChange}
+        clearSort={clearSort}
+        sortData={sortData}
       />
-      <DisplaySection filterErr={filterErr} filteredData={filteredData} />
+      <DisplaySection
+        filterErr={filterErr}
+        filteredData={filteredData}
+        sortedData={sortedData}
+      />
     </StyledWrapper>
   );
 };

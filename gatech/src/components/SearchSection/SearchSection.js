@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import colors from "./../../theme/colors";
+import Button from "./../Button/Button";
 
 const StyledSection = styled.section`
   background-color: ${props => props.colors.sectionBackgroundColor};
@@ -39,9 +40,11 @@ const StyledSection = styled.section`
 const SearchSection = ({
   handleInputChange,
   searchValue,
-  sortEmail,
-  sortAge,
-  handleButtonClick
+  sortEmailValue,
+  sortAgeValue,
+  clearSort,
+  sortData,
+  handleSelectChange
 }) => {
   return (
     <StyledSection colors={colors}>
@@ -51,17 +54,34 @@ const SearchSection = ({
           <input value={searchValue} onChange={handleInputChange} type="text" />
         </label>
         <p>Sortuj według</p>
-        <button
-          name="email"
-          onClick={handleButtonClick}
-          value={sortEmail}
-          id="2"
+        <select
+          name="EmailSortSelect"
+          value={sortEmailValue}
+          onChange={handleSelectChange}
+          id="email"
+          disabled={clearSort}
         >
-          Email
-        </button>
-        <button name="age" value={sortAge} onClick={handleButtonClick} id="1">
-          Wiek
-        </button>
+          <option>Sortuj przez email</option>
+          <option value="AZ">Email A-Z</option>
+          <option value="ZA">Email Z-A</option>
+        </select>
+        <select
+          name="AgeSortSelect"
+          value={sortAgeValue}
+          onChange={handleSelectChange}
+          id="age"
+          disabled={clearSort}
+        >
+          <option>Sortuj przez wiek</option>
+          <option value="ASC">Wiek rosnąco</option>
+          <option value="DESC">Wiek malejąco</option>
+        </select>
+        <Button
+          id="clear"
+          value={clearSort}
+          name={clearSort ? "Resetuj filtr" : "Zastosuj filtr"}
+          func={sortData}
+        />
       </form>
     </StyledSection>
   );

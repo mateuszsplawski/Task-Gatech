@@ -6,7 +6,9 @@ const colors = {
   womenBorderColor: "rgb(255, 128, 240)",
   menBorderColor: "rgb(55, 37, 250)",
   cardButtonActive: "rgb(100,100,100)",
-  cardButtonOff: "rgb(0, 0, 0)"
+  cardButtonOff: "rgb(0, 0, 0)",
+  buttonActiveColor: "green",
+  buttonOffColor: "red"
 };
 
 export default colors;
