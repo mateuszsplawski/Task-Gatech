@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const StyledLi = styled.li`
-  width: 100%;
+  width: 320px;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -18,9 +18,10 @@ const StyledLi = styled.li`
   overflow: hidden;
   transition: max-height 0.4s;
   max-height: ${props => (props.expanded ? "1000px" : "50px")};
+  background: ${props => props.colors.userBackgroundColor};
 
   &:last-of-type {
-    margin: unset;
+    margin: 0 auto;
   }
 
   header {
@@ -31,9 +32,10 @@ const StyledLi = styled.li`
     height: 50px;
 
     div {
-      height: ${props => (props.expanded ? "65px" : "50px")};
-      width: ${props => (props.expanded ? "65px" : "50px")};
+      height: ${props => (props.expanded ? "60px" : "50px")};
+      width: ${props => (props.expanded ? "60px" : "50px")};
       border-radius: 50%;
+      box-shadow: 1px 1px 9px -4px ${props => (props.sex ? props.colors.womenBorderColor : props.colors.menBorderColor)};
       background-color: ${props => props.colors.imgBackgroundColor};
       overflow: hidden;
       margin: 0 ${props => (props.expanded ? "10px" : "25px")} 0 0;
@@ -46,8 +48,8 @@ const StyledLi = styled.li`
     }
 
     h1 {
-      width: 250px;
-      font-size: 21px;
+      width: 200px;
+      font-size: 19px;
     }
 
     button {
@@ -86,18 +88,22 @@ const StyledLi = styled.li`
   }
 
   ul {
-    margin-left: 75px;
+    margin-left: 65px;
     display: flex;
     flex-direction: column;
     li {
       margin: 5px;
       list-style: none;
+      a {
+        color: black;
+        font-style: italic;
+      }
     }
   }
 `;
 
 const User = ({ userData }) => {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   const {
     address: { city, street, houseNumber },

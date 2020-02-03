@@ -74,53 +74,62 @@ const App = () => {
 
   const sortData = e => {
     e.preventDefault();
-    setSortedData(filteredData);
+    //
+    // SORT FUNCTION
+    //
     if (!clearSort) {
-      // Sort Data by Age
+      //
+      // SORT DATA AGE CONDITION
+      //
       if (sortAgeValue === "ASC") {
-        sortedData.sort((a, b) => {
+        filteredData.sort((a, b) => {
           if (a.age > b.age) {
             return 1;
           } else if (a.age < b.age) {
             return -1;
           } else return 0;
         });
-        console.log("ROŚNIE");
       } else if (sortAgeValue === "DESC") {
-        sortedData.sort((a, b) => {
+        filteredData.sort((a, b) => {
           if (a.age > b.age) {
             return -1;
           } else if (a.age < b.age) {
             return 1;
           } else return 0;
         });
-        console.log("MALEJE");
       }
-      // Sort Data by Email
+      //
+      // SORT DATA MAIL CONDITION
+      //
       if (sortEmailValue === "AZ") {
-        sortedData.sort((a, b) => {
+        filteredData.sort((a, b) => {
           if (a.email > b.email) {
             return 1;
           } else if (a.email < b.email) {
             return -1;
           } else return 0;
         });
-        console.log("AZ");
       } else if (sortEmailValue === "ZA") {
-        sortedData.sort((a, b) => {
+        filteredData.sort((a, b) => {
           if (a.email > b.email) {
             return -1;
           } else if (a.email < b.email) {
             return 1;
           } else return 0;
         });
-        console.log("ZA");
       }
+      setSortedData(filteredData);
+      setClearSort(true);
+      //
+      // CLEAR DATA FUNCTION
+      //
     } else if (clearSort) {
       setSortedData([]);
+      setSearchValue("");
       setSortEmailValue("");
       setSortAgeValue("");
       setClearSort(false);
+      setFilteredData(usersData);
     }
   };
 

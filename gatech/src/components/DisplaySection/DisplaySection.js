@@ -12,6 +12,7 @@ const StyledSection = styled.section`
   padding: 25px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 30px -25px ${props => props.colors.mainColor};
 `;
 
 const DisplaySection = ({ filterErr, filteredData, sortedData }) => {
