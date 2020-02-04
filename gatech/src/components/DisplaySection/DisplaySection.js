@@ -23,7 +23,7 @@ const StyledSection = styled.section`
   }
 
   @media (max-width: 450px) {
-    padding: 10px;
+    padding: 0;
     width: 100%;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;

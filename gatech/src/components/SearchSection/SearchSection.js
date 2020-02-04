@@ -52,6 +52,17 @@ const StyledSection = styled.section`
     padding: 10px 10px 5px 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+
+    form {
+      input {
+        width: 140px;
+        font-size: 13px;
+      }
+    }
+
+    button {
+      width: 30px;
+    }
   }
 `;
 
@@ -66,7 +77,7 @@ const SearchSection = ({
 }) => {
   return (
     <StyledSection colors={colors}>
-      <Logo />
+      {/* <Logo /> */}
       <form>
         <label>
           <input

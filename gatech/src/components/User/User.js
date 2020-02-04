@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const StyledLi = styled.li`
-  width: 320px;
+  width: 310px;
   list-style: none;
   display: flex;
   flex-direction: column;
