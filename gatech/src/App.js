@@ -124,12 +124,13 @@ const App = () => {
       // CLEAR DATA FUNCTION
       //
     } else if (clearSort) {
+      setFilteredData(usersData);
       setSortedData([]);
       setSearchValue("");
       setSortEmailValue("");
       setSortAgeValue("");
       setClearSort(false);
-      setFilteredData(usersData);
+      console.log("czystka");
     }
   };
 

@@ -46,6 +46,13 @@ const StyledSection = styled.section`
       }
     }
   }
+
+  @media (max-width: 450px) {
+    width: 100%;
+    padding: 10px 10px 5px 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 `;
 
 const SearchSection = ({
@@ -77,7 +84,7 @@ const SearchSection = ({
             id="email"
             disabled={clearSort}
           >
-            <option>Sortuj przez email</option>
+            <option value={false}>Sortuj przez email</option>
             <option value="AZ">Email A-Z</option>
             <option value="ZA">Email Z-A</option>
           </select>
@@ -88,7 +95,7 @@ const SearchSection = ({
             id="age"
             disabled={clearSort}
           >
-            <option>Sortuj przez wiek</option>
+            <option value={false}>Sortuj przez wiek</option>
             <option value="ASC">Wiek rosnąco</option>
             <option value="DESC">Wiek malejąco</option>
           </select>

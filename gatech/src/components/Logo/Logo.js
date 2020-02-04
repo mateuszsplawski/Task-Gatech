@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   transform: translate(-50%, -40%);
   h1 {
     color: ${props => props.colors.userBackgroundColor};
-    text-shadow: 0 -3px 5px ${props => props.colors.mainColor};
+    text-shadow: 0 -2px 4px ${props => props.colors.mainColor};
     font-size: 30px;
   }
 `;

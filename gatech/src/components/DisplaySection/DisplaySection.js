@@ -13,6 +13,21 @@ const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 30px -25px ${props => props.colors.mainColor};
+  position: relative;
+
+  ul > h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 450px) {
+    padding: 10px;
+    width: 100%;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 `;
 
 const DisplaySection = ({ filterErr, filteredData, sortedData }) => {
@@ -21,7 +36,7 @@ const DisplaySection = ({ filterErr, filteredData, sortedData }) => {
     sortedData.length > 0
       ? setActualData(sortedData)
       : setActualData(filteredData);
-  }, [filteredData, sortedData]);
+  }, [filteredData, sortedData, sortedData.length]);
   return (
     <StyledSection colors={colors}>
       <ul>
