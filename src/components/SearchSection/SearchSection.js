@@ -56,7 +56,7 @@ const StyledSection = styled.section`
     form {
       input {
         width: 140px;
-        font-size: 13px;
+        font-size: 16px;
       }
     }
 
@@ -81,7 +81,7 @@ const SearchSection = ({
       <form>
         <label>
           <input
-            placeholder="Wyszukaj osobę..."
+            placeholder="Wyszukaj..."
             value={searchValue}
             onChange={handleInputChange}
             type="text"
