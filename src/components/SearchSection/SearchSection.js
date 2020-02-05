@@ -85,6 +85,7 @@ const SearchSection = ({
             value={searchValue}
             onChange={handleInputChange}
             type="text"
+            disabled={clearSort}
           />
         </label>
         <div>
