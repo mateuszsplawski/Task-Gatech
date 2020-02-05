@@ -9,6 +9,7 @@ const StyledLi = styled.li`
   list-style: none;
   display: flex;
   flex-direction: column;
+  position: relative;
   border: 1px solid
     ${props =>
       props.sex ? props.colors.womenBorderColor : props.colors.menBorderColor};
@@ -16,8 +17,8 @@ const StyledLi = styled.li`
   margin: 0 auto 10px auto;
   border-radius: 25px;
   overflow: hidden;
-  transition: max-height 0.4s;
-  max-height: ${props => (props.expanded ? "1000px" : "50px")};
+  transition: height 0.4s;
+  height: ${props => (props.expanded ? "180px" : "50px")};
   background: ${props => props.colors.userBackgroundColor};
 
   &:last-of-type {

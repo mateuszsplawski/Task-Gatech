@@ -18,6 +18,10 @@ const StyledWrapper = styled.main`
   align-items: center;
   flex-direction: column;
   position: relative;
+
+  @media (max-width: 450px) {
+    background: ${props => props.colors.sectionBackgroundColor};
+  }
 `;
 
 const App = () => {
